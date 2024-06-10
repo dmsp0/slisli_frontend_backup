@@ -6,10 +6,9 @@ const Home = lazy(() => import("../pages/IndexPage"));
 const DetailForum = lazy(() => import("../pages/DetailForum"));
 // const FindId = lazy(() => import("../pages/find/FindIdPage"));
 // const FindPwd = lazy(() => import("../pages/find/FindPwdPage"));
-const Signup = lazy(() => import("../pages/SignupPage"));
 const Login = lazy(() => import("../pages/Login"));
-const MyPage = lazy(() => import("../pages/MyPage"));
-// const List = lazy(() => import("../pages/CampingListPage.js"));
+const BoothListPage = lazy(() => import("../pages/BoothListPage"));
+const BoothDetailPage = lazy(() => import("../pages/BoothDetailPage"));
 // const ListByWeather = lazy(() => import("../pages/CampingListByWeatherPage"));
 // const Detail = lazy(() => import("../pages/CampingDetailPage.js"));
 // const CampReview = lazy(() => import("../pages/CampReview"));
@@ -61,18 +60,18 @@ const root = createBrowserRouter([
     ),
   },
   {
-    path: "/signup",
+    path: "/booth/list",
     element: (
       <Suspense fallback={<Loading />}>
-        <Signup />
+        <BoothListPage />
       </Suspense>
     ),
   },
-   {
-    path: "/mypage",
+  {
+    path: "/booth/:id",
     element: (
       <Suspense fallback={<Loading />}>
-        <MyPage />
+        <BoothDetailPage />
       </Suspense>
     ),
   },
